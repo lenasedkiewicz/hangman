@@ -40,7 +40,7 @@ public class Main {
                 if (understandable.equals("0") || understandable.equals("1")) {
                     understood = Integer.parseInt(understandable);
                 } else {
-                    System.out.println("Invalid answer. Provide 0 for NO and 1 for YES");
+                    System.out.println("Invalid answer.");
                     continue;
                 }
 
@@ -56,7 +56,7 @@ public class Main {
                 System.out.println("Perfect! Time to play!");
                 dontKnowTheHangmanRules = false;
             } else {
-                System.out.println("Invalid answer. Provide 0 for NO and 1 for YES");
+                System.out.println("Invalid answer.");
             }
         }
         RandomWord word = new RandomWord();
