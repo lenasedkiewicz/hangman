@@ -1,4 +1,4 @@
-public class WordsDrawing {
+public class RandomWord {
     private String[] words = {
             "apple", "beach", "chair", "dance", "eagle", "flame", "grape", "house",
             "image", "juice", "knife", "lemon", "mouse", "night", "ocean", "peace",

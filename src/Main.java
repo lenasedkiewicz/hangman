@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main() {
-        WordsDrawing word = new WordsDrawing();
+        RandomWord word = new RandomWord();
         System.out.println(word.getWord());
 
         Scanner scanner = new Scanner(System.in);
