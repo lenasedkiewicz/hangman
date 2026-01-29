@@ -60,6 +60,7 @@ public class Main {
             }
         }
         RandomWord word = new RandomWord();
+        word.setWord();
         System.out.println(word.getWord());
 /*        Hangman hangman = new Hangman();
         System.out.println(hangman.getHangman());*/

@@ -1,5 +1,5 @@
 public class RandomWord {
-    private String[] words = {
+    private final String[] words = {
             "apple", "beach", "chair", "dance", "eagle", "flame", "grape", "house",
             "image", "juice", "knife", "lemon", "mouse", "night", "ocean", "peace",
             "queen", "river", "stone", "tiger", "uncle", "voice", "water", "yacht",
@@ -15,8 +15,14 @@ public class RandomWord {
             "artist", "bottle", "camera", "desert", "energy", "flower", "global", "helper"
     };
 
-    public String getWord(){
-        int randomNum = (int)(Math.random() * 100);
-        return words[randomNum];
+    private String randomWord;
+
+    public String getWord() {
+        return randomWord;
+    }
+
+    public String setWord() {
+        int randomNum = (int) (Math.random() * 100);
+        return randomWord = words[randomNum];
     }
 }
