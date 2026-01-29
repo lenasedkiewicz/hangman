@@ -7,5 +7,7 @@ public class Main {
         System.out.println("Enter your name\n");
         String username = scanner.nextLine();
         System.out.println("Username: " + username);
+        Hangman hangman = new Hangman();
+        System.out.println(hangman.getHangman());
     }
 }
