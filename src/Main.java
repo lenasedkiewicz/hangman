@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main() {
-        System.out.println("Hello world!");
+        WordsDrawing word = new WordsDrawing();
+        System.out.println(word.getWord());
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your name\n");
         String username = scanner.nextLine();
