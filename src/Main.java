@@ -92,7 +92,7 @@ public class Main {
                         isCharacterInvalid = false;
                     }
                 } else {
-                    System.out.println("Provide a letter: ");
+                    System.out.println("Invalid input. Provide a letter: ");
                 }
             }
 
