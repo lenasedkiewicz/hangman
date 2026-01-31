@@ -68,7 +68,8 @@ public class Main {
         WordChecker wordChecker = new WordChecker();
         wordChecker.setUnderscoredWord(randomWord);
 
-        int attempts = 11;
+        int attempts = 50;
+        int wrongGuesses = 0;
         String underscoredWord = "";
         Hangman hangman = new Hangman();
         for (int i = 0; i < attempts; i++) {
@@ -95,29 +96,32 @@ public class Main {
                     System.out.println("Invalid input. Provide a letter: ");
                 }
             }
+            String wordBeforeGuess = wordChecker.getUnderscoredWord();
 
             String charactersUsed = String.join("", wordChecker.addCharactersUsed(character, i));
             System.out.println("Characters used: " + charactersUsed);
+
             String guessedWord = wordChecker.wordShowedToUser(character, randomWord);
 
-            if (underscoredWord.equals(guessedWord)) {
+            if (wordBeforeGuess.equals(guessedWord)) {
                 System.out.println("Ooops! Letter not found in word!");
-                System.out.println(hangman.getHangman(i));
+                System.out.println(hangman.getHangman(wrongGuesses));
+                wrongGuesses++;
             } else {
-                i--;
                 System.out.println("Nice, you guessed one letter!");
             }
 
             WinChecker check = new WinChecker();
-            if (check.checkForWin(underscoredWord,randomWord)) {
+            if (check.checkForWin(wordChecker.getUnderscoredWord(),randomWord)) {
                 System.out.println("Yayyy! You won!");
                 break;
-            } else {
-                if (i == 10) {
-                    System.out.println("Game over!");
-                    System.out.println("The word was: " + randomWord);
-                    System.out.println("Good luck next time!");
-                }
+            }
+
+            if (wrongGuesses == 11) {
+                System.out.println("Game over!");
+                System.out.println("The word was: " + randomWord);
+                System.out.println("Good luck next time!");
+                break;
             }
         }
         scanner.close();

@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class WordChecker {
     private String underscoredWord;
-    private String[] charactersUsed = {"_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "};;
+    private ArrayList<String> charactersUsed = new ArrayList<>();
 
     public String getUnderscoredWord() {
         return underscoredWord;
@@ -18,15 +19,11 @@ public class WordChecker {
     }
 
     public boolean isCharacterUsed(String character) {
-        if (Arrays.asList(charactersUsed).contains(character.toUpperCase())) {
-            return true;
-        } else {
-            return false;
-        }
+        return charactersUsed.contains(character.toUpperCase());
     }
 
-    public String[] addCharactersUsed(String character, int iteration) {
-        charactersUsed[iteration] = character.toUpperCase() + " ";
+    public ArrayList<String> addCharactersUsed(String character, int iteration) {
+        charactersUsed.add(character.toUpperCase());
         return charactersUsed;
     }
 
