@@ -17,10 +17,16 @@ public class WordChecker {
         return String.join(" ", charactersUsed);
     }
 
-    public String[] addCharactersUsed(String character, int iteration) {
-        if (!Arrays.asList(charactersUsed).contains(character.toUpperCase())) {
-            charactersUsed[iteration - 1] = character.toUpperCase();
+    public boolean isCharacterUsed(String character) {
+        if (Arrays.asList(charactersUsed).contains(character.toUpperCase())) {
+            return true;
+        } else {
+            return false;
         }
+    }
+
+    public String[] addCharactersUsed(String character, int iteration) {
+        charactersUsed[iteration] = character.toUpperCase();
         return charactersUsed;
     }
 
