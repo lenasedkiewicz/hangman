@@ -107,13 +107,16 @@ public class Main {
                 System.out.println("Ooops! Letter not found in word!");
                 System.out.println(hangman.getHangman(wrongGuesses));
                 wrongGuesses++;
+            } else if (i == 0){
+                System.out.println("Nice, you made first guess!");
             } else {
-                System.out.println("Nice, you guessed one letter!");
+                    System.out.println("Nice, you guessed one letter!");
             }
 
             WinChecker check = new WinChecker();
             if (check.checkForWin(wordChecker.getUnderscoredWord(),randomWord)) {
                 System.out.println("Yayyy! You won!");
+                System.out.println("The word was: " + randomWord);
                 break;
             }
 
