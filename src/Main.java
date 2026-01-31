@@ -69,38 +69,56 @@ public class Main {
         wordChecker.setUnderscoredWord(randomWord);
 
         int attempts = 11;
+        String underscoredWord = "";
+        Hangman hangman = new Hangman();
         for (int i = 0; i < attempts; i++) {
-            String underscoredWord = wordChecker.getUnderscoredWord();
+            underscoredWord = wordChecker.getUnderscoredWord();
             System.out.println("Your word for guessing: " + underscoredWord);
             System.out.println("Provide a letter: ");
 
             String character = "";
 
             Pattern pattern = Pattern.compile("[a-zA-Z]");
+
             boolean isCharacterInvalid = true;
             while(isCharacterInvalid) {
                 character = scanner.nextLine();
                 Matcher matcher = pattern.matcher(character);
                 boolean ifMatches = matcher.matches();
                 if (ifMatches) {
-                    isCharacterInvalid = false;
+                    if (wordChecker.isCharacterUsed(character)) {
+                        System.out.println("This character was used, provide another one!");
+                    } else {
+                        isCharacterInvalid = false;
+                    }
                 } else {
                     System.out.println("Provide a letter: ");
                 }
             }
 
+            String charactersUsed = String.join("", wordChecker.addCharactersUsed(character, i));
+            System.out.println("Characters used: " + charactersUsed);
+            String guessedWord = wordChecker.wordShowedToUser(character, randomWord);
 
-            if
+            if (underscoredWord.equals(guessedWord)) {
+                System.out.println("Ooops! Letter not found in word!");
+                System.out.println(hangman.getHangman(i));
+            } else {
+                i--;
+                System.out.println("Nice, you guessed one letter!");
+            }
 
-            boolean characterCheck = wordChecker.isCharacterUsed(character);
-            while ()
-
+            if (underscoredWord.equals(randomWord)) {
+                System.out.println("Yayyy! You won!");
+                break;
+            } else {
+                if (i == 10) {
+                    System.out.println("Game over!");
+                    System.out.println("The word was: " + randomWord);
+                    System.out.println("Good luck next time!");
+                }
+            }
         }
-
-        System.out.println(randomWord);
-/*        Hangman hangman = new Hangman();
-        System.out.println(hangman.getHangman());*/
-
         scanner.close();
         System.out.println("Thanks for playing!");
         System.exit(0);
