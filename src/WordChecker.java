@@ -7,10 +7,7 @@ public class WordChecker {
     }
 
     public String setUnderscoredWord(String wordChecked) {
-        int wordLength = wordChecked.length();
-        for (int i = 0; i < wordLength; i++) {
-            underscoredWord = underscoredWord + "_ ";
-        }
+        underscoredWord = "_ ".repeat(wordChecked.length());
         return underscoredWord;
     }
 
