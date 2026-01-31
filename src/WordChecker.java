@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class WordChecker {
     private String underscoredWord;
-    private String[] charactersUsed;
+    private String[] charactersUsed = new String[11];
 
     public String getUnderscoredWord() {
         return underscoredWord;
@@ -16,7 +18,9 @@ public class WordChecker {
     }
 
     public String[] addCharactersUsed(String character, int iteration) {
-        charactersUsed[iteration - 1] = character;
+        if (!Arrays.asList(charactersUsed).contains(character.toUpperCase())) {
+            charactersUsed[iteration - 1] = character.toUpperCase();
+        }
         return charactersUsed;
     }
 
