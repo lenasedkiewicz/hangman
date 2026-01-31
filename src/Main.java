@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static java.lang.System.exit;
 
 public class Main {
@@ -64,9 +67,35 @@ public class Main {
 
         WordChecker wordChecker = new WordChecker();
         wordChecker.setUnderscoredWord(randomWord);
-        String underscoredWord = wordChecker.getUnderscoredWord();
-        System.out.println("Your word for guessing: " + underscoredWord);
 
+        int attempts = 11;
+        for (int i = 0; i < attempts; i++) {
+            String underscoredWord = wordChecker.getUnderscoredWord();
+            System.out.println("Your word for guessing: " + underscoredWord);
+            System.out.println("Provide a letter: ");
+
+            String character = "";
+
+            boolean isCharacterInvalid = true;
+            while(isCharacterInvalid) {
+                character = scanner.nextLine();
+                Pattern pattern = Pattern.compile(character);
+                Matcher matcher = pattern.matcher("[a-zA-Z]");
+                boolean ifMatches = matcher.matches();
+                if (ifMatches) {
+                    isCharacterInvalid = false;
+                } else {
+                    System.out.println("Provide a letter: ");
+                }
+            }
+
+
+            if
+
+            boolean characterCheck = wordChecker.isCharacterUsed(character);
+            while ()
+
+        }
 
         System.out.println(randomWord);
 /*        Hangman hangman = new Hangman();
