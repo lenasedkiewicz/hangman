@@ -41,7 +41,7 @@ public class WordChecker {
                 manipulatedWord[i] = character;
             }
         }
-
-        return String.join(" ", manipulatedWord);
+        underscoredWord = String.join(" ", manipulatedWord);
+        return underscoredWord;
     }
 }
