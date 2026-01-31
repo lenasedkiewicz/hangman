@@ -82,7 +82,7 @@ public class Main {
 
             boolean isCharacterInvalid = true;
             while(isCharacterInvalid) {
-                character = scanner.nextLine();
+                character = scanner.nextLine().toLowerCase();
                 Matcher matcher = pattern.matcher(character);
                 boolean ifMatches = matcher.matches();
                 if (ifMatches) {
