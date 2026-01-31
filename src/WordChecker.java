@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class WordChecker {
     private String underscoredWord;
-    private String[] charactersUsed = new String[11];
+    private String[] charactersUsed = {"_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "};;
 
     public String getUnderscoredWord() {
         return underscoredWord;
@@ -26,7 +26,7 @@ public class WordChecker {
     }
 
     public String[] addCharactersUsed(String character, int iteration) {
-        charactersUsed[iteration] = character.toUpperCase();
+        charactersUsed[iteration] = character.toUpperCase() + " ";
         return charactersUsed;
     }
 
