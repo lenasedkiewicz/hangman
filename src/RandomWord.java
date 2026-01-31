@@ -12,7 +12,7 @@ public class RandomWord {
             "eleven", "finger", "frozen", "guitar", "hockey", "indent", "jigsaw", "kettle",
             "laptop", "market", "number", "office", "pencil", "rocket", "school", "spring",
             "summer", "winter", "travel", "turkey", "update", "volume", "wizard", "yogurt",
-            "artist", "bottle", "camera", "desert", "energy", "flower", "global", "helper"
+            "artist", "bottle", "camera", "desert", "energy", "flower", "global", "helper", "shadow", "player", "system", "coffee"
     };
 
     private String randomWord;
