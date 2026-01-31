@@ -60,8 +60,15 @@ public class Main {
             }
         }
         RandomWord word = new RandomWord();
-        word.setWord();
-        System.out.println(word.getWord());
+        String randomWord = word.setWord();
+
+        WordChecker wordChecker = new WordChecker();
+        wordChecker.setUnderscoredWord(randomWord);
+        String underscoredWord = wordChecker.getUnderscoredWord();
+        System.out.println("Your word for guessing: " + underscoredWord);
+
+
+        System.out.println(randomWord);
 /*        Hangman hangman = new Hangman();
         System.out.println(hangman.getHangman());*/
 
