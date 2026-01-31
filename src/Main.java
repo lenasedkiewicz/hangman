@@ -76,11 +76,11 @@ public class Main {
 
             String character = "";
 
+            Pattern pattern = Pattern.compile("[a-zA-Z]");
             boolean isCharacterInvalid = true;
             while(isCharacterInvalid) {
                 character = scanner.nextLine();
-                Pattern pattern = Pattern.compile(character);
-                Matcher matcher = pattern.matcher("[a-zA-Z]");
+                Matcher matcher = pattern.matcher(character);
                 boolean ifMatches = matcher.matches();
                 if (ifMatches) {
                     isCharacterInvalid = false;
