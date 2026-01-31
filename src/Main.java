@@ -108,7 +108,8 @@ public class Main {
                 System.out.println("Nice, you guessed one letter!");
             }
 
-            if (underscoredWord.equals(randomWord)) {
+            WinChecker check = new WinChecker();
+            if (check.checkForWin(underscoredWord,randomWord)) {
                 System.out.println("Yayyy! You won!");
                 break;
             } else {
