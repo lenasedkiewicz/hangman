@@ -1,7 +1,11 @@
 public class Hangman {
-    private String[] hangman = {"+--------+\n|/       |\n|        0\n|       /|\\\n|      / | \\\n|       / \\\n|      /   \\\n|\n+==========="};
+    private static String[] hangman = {"+--------+\n|/       |\n|        0\n|       /|\\\n|      / | \\\n|       / \n|      /  \n|\n+===========","+--------+\n|/       |\n|        0\n|       /|\\\n|      / | \\\n|       / \\\n|      /  \n|\n+===========", "+--------+\n|/       |\n|        0\n|       /|\\\n|      / | \\\n|       / \\\n|      /   \\\n|\n+==========="};
 
-    public String getHangman() {
-        return hangman[0];
+    public static String getHangman(int i) {
+        return hangman[i];
+    }
+
+    public static void main() {
+        System.out.println(getHangman(0));
     }
 }
